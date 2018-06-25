@@ -1,0 +1,144 @@
+body {
+  background-image: url(../images/sand.jpg);
+  background-size: cover;
+}
+
+div.grid-container {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr ;
+  grid-template-rows: 15% 85%;
+}
+div.tic-tac-toe {
+  grid-column:1;
+  grid-row: 2;
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  opacity: 0.5;
+  border: 5px solid #4F331A;
+}
+div.one {
+  grid-column: 1;
+  grid-row: 1;
+  border-right: 5px solid #4F331A;
+  border-bottom: 10px solid #4F331A;
+  height: 150px;
+}
+
+div.two {
+  grid-column: 2;
+  grid-row: 1;
+  border-left: 5px solid #4F331A;
+  border-right: 5px solid #4F331A;
+  border-bottom: 10px solid #4F331A;
+  height: 150px;
+}
+
+div.three {
+  grid-column: 1;
+  grid-row: 2;
+  border-right: 5px solid #4F331A;
+  border-top: 5px solid #4F331A;
+  border-bottom: 5px solid #4F331A;
+  height:150px;
+}
+div.four {
+  grid-column: 2;
+  grid-row: 2;
+  border-left: 5px solid #4F331A;
+  border-right: 5px solid #4F331A;
+  border-top: 5px solid #4F331A;
+  border-bottom: 5px solid #4F331A;
+  height:150px;
+}
+div.five {
+  grid-column: 3;
+  grid-row: 1;
+  border-left: 5px solid #4F331A;
+  border-bottom: 10px solid #4F331A;
+  height:150px;
+}
+div.six {
+  grid-column: 3;
+  grid-row: 2;
+  border-top: 5px solid #4F331A;
+  border-left: 5px solid #4F331A;
+  border-bottom: 5px solid #4F331A;
+  height:150px;
+}
+div.seven {
+  grid-column: 1;
+  grid-row: 3;
+  border-top: 9px solid #4F331A;
+  border-right: 5px solid #4F331A;
+  height:150px;
+}
+div.eight {
+  grid-column: 2;
+  grid-row: 3;
+  border-top: 9px solid #4F331A;
+  border-left: 5px solid #4F331A;
+  border-right: 5px solid #4F331A;
+  height:150px;
+}
+div.nine {
+  grid-column: 3;
+  grid-row: 3;
+  border-top: 9px solid #4F331A;
+  border-left: 5px solid #4F331A;
+  height:150px;
+}
+
+div.icons {
+  grid-column:2;
+  grid-row: 2;
+}
+img.icon {
+  height: 30px;
+  display: inline-block;
+  margin-left: 25px;
+  margin-right: 25px;
+  padding: 5px;
+  opacity: 0.5;
+}
+
+.icons h2 {
+  text-align: center;
+}
+
+.circ {
+  cursor: url(../images/circle.png),auto;
+}
+
+.x {
+  cursor: url(../images/cross.png),auto;
+}
+
+.app{
+  cursor: url(../images/apple.png),auto;
+
+}
+
+.window{
+  cursor: url(../images/window.png),auto;
+
+}
+
+.horse{
+  cursor: url(../images/knight.png),auto;
+
+}
+
+.piece {
+  cursor: url(../images/rook.png),auto;
+}
+
+.one img {
+  align-self: center;
+}
+
+
+.tic-tac-toe img {
+  margin: 50px;
+  display:block;
+}
