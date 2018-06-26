@@ -33,7 +33,7 @@ const playerWin = function () {
                  aiMoves.includes( winCombo[2]) ) {
         message = alert(`Congratulations! ${ai} win!`);
         return message;
-      } else if (playerMoves.length === 4 && aiMoves.length ===4  ) {
+      } else if (playerMoves.length === 4 && aiMoves.length ===5 || playerMoves.length === 5 && aiMoves.length ===4 ) {
         message = alert(`it's a draw!`)
         return message;
       }
@@ -190,6 +190,22 @@ $(document).ready(function() {
     $('.icons').addClass('yellow').slideToggle(1000);
     $('.icon').slideToggle(1000);
 
+  })
+
+  $('.theme1').on('click', function () {
+    $('body').removeClass('boat')
+    $('body').removeClass('bridge')
+    $('body').addClass('boat');
+  })
+  $('.theme2').on('click', function () {
+    $('body').removeClass('boat')
+    $('body').removeClass('sunset')
+    $('body').addClass('bridge');
+  })
+  $('.theme3').on('click', function () {
+    $('body').removeClass('boat')
+    $('body').removeClass('bridge')
+    $('body').addClass('sunset');
   })
 
 })
