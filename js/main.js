@@ -20,16 +20,26 @@ const winningMoves = [
 
 //do if statement if content of playermoves/ai moves are in winning condition
 
-// const playerWin = function () {
-//   for (let i = 0 ; i<winningMoves.length ; i++){
-//     if(playerMoves.sort().join('').includes(winningMoves[i].sort().join('')) ){
-//       message = alert('Congratulations you win!');
-//     } else if(aiMoves.sort().join('').includes(winningMoves[i].sort().join(''))) {
-//       message = alert ('You lose! Try it again!');
-//     }
-//     return message;
-//   }
-// }
+const playerWin = function () {
+  for (let i = 0 ; i<winningMoves.length ; i++){
+      const winCombo = winningMoves[i];
+      if (playerMoves.includes( winCombo[0] ) &&
+          playerMoves.includes( winCombo[1]) &&
+          playerMoves.includes( winCombo[2]) ) {
+        message = alert(`Congratulations! ${player} win!`);
+        return message;
+      } else if (aiMoves.includes(winCombo[0]) &&
+                 aiMoves.includes( winCombo[1]) &&
+                 aiMoves.includes( winCombo[2]) ) {
+        message = alert(`Congratulations! ${ai} win!`);
+        return message;
+      } else if (playerMoves.length === 3 && aiMoves.length ===3 ) {
+        message = alert(`it's a draw!`)
+        return message;
+      }
+  }
+
+}
 const updateIcon = function() {
   if ($('#choose img').length === 0) {
     $('#choose').html('You:            ');
