@@ -55,10 +55,12 @@ const updateIcon = function() {
 
   }
 }
+
 $(document).ready(function() {
   //default hide icons
   $('.icon').hide();
   $('.icons').hide();
+  $('.tic-tac-toe').hide();
 
   //put image inside squares when square is clicked.
   //once you click something tile is pushed and alternates turns
@@ -93,8 +95,10 @@ $(document).ready(function() {
     $('.icon').hide(1000);
     $('.yellow').hide(1000);
     $('.pink').hide(1000);
+    $('.tic-tac-toe').show(1000);
     $('#choose').appendTo('.middle');
     $('#choose2').appendTo('.middle');
+    $('#arrow').remove();
     $('body').removeClass("opponent");
     $('body').addClass('circ');
     ai = "cross"
@@ -106,8 +110,10 @@ $(document).ready(function() {
     $('.icon').hide(1000);
     $('.yellow').hide(1000);
     $('.pink').hide(1000);
+    $('.tic-tac-toe').show(1000);
     $('#choose').appendTo('.middle');
     $('#choose2').appendTo('.middle');
+    $('#arrow').remove();
     $('body').removeClass("opponent");
     $('body').addClass('x');
     ai = "circle"
@@ -119,8 +125,10 @@ $(document).ready(function() {
     $('.icon').hide(1000);
     $('.yellow').hide(1000);
     $('.pink').hide(1000);
+    $('.tic-tac-toe').show(1000);
     $('#choose').appendTo('.middle');
     $('#choose2').appendTo('.middle');
+    $('#arrow').remove();
     $('body').removeClass("opponent");
     $('body').addClass('app');
     ai = "window"
@@ -132,8 +140,10 @@ $(document).ready(function() {
     $('.icon').hide(1000);
     $('.yellow').hide(1000);
     $('.pink').hide(1000);
+    $('.tic-tac-toe').show(1000);
     $('#choose').appendTo('.middle');
     $('#choose2').appendTo('.middle');
+    $('#arrow').remove();
     $('body').removeClass("opponent");
     $('body').addClass('window');
     ai = "apple"
@@ -146,8 +156,10 @@ $(document).ready(function() {
     $('.icon').hide(1000);
     $('.yellow').hide(1000);
     $('.pink').hide(1000);
+    $('.tic-tac-toe').show(1000);
     $('#choose').appendTo('.middle');
     $('#choose2').appendTo('.middle');
+    $('#arrow').remove();
     $('body').removeClass("opponent");
     $('body').addClass('horse');
     ai = "rook"
@@ -159,8 +171,10 @@ $(document).ready(function() {
     $('.icon').hide(1000);
     $('.yellow').hide(1000);
     $('.pink').hide(1000);
+    $('.tic-tac-toe').show(1000);
     $('#choose').appendTo('.middle');
     $('#choose2').appendTo('.middle');
+    $('#arrow').remove();
     $('body').removeClass("opponent");
     $('body').addClass('piece');
     ai = "knight"

@@ -196,7 +196,7 @@ img.icon {
   height: 100px;
   box-shadow: 0 0 15px #CF9D16;
   grid-column: 1;
-  width: 50%;
+  width: 48%;
 }
 #choose2 {
   font-size: 24px;
@@ -220,10 +220,20 @@ img.icon {
 
 #choose img {
   display: inline-block;
-  height: 50px;
+  height: 50px
+
 }
 
 .middle {
   grid-column: 2;
   grid-row: 1;
+  display: inline-block;
+}
+
+#arrow {
+  display: inline-block;
+  height: 100px;
+  width: 50%;
+  float: right;
+
 }
