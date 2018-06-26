@@ -3,6 +3,8 @@ let player;
 let ai;
 let tile;
 let iconId;
+let message;
+const icons = "circ x app window horse piece";
 const playerMoves = [];
 const aiMoves = [];
 const winningMoves = [
@@ -15,6 +17,19 @@ const winningMoves = [
   [4, 5, 6],
   [7, 8, 9]
 ];
+
+//do if statement if content of playermoves/ai moves are in winning condition
+
+// const playerWin = function () {
+//   for (let i = 0 ; i<winningMoves.length ; i++){
+//     if(playerMoves.sort().join('').includes(winningMoves[i].sort().join('')) ){
+//       message = alert('Congratulations you win!');
+//     } else if(aiMoves.sort().join('').includes(winningMoves[i].sort().join(''))) {
+//       message = alert ('You lose! Try it again!');
+//     }
+//     return message;
+//   }
+// }
 const updateIcon = function() {
   if ($('#choose img').length === 0) {
     $('#choose').html('You:            ');
@@ -30,118 +45,119 @@ const updateIcon = function() {
 
   }
 }
-
 $(document).ready(function() {
   //default hide icons
   $('.icon').hide();
   $('.icons').hide();
 
-
   //put image inside squares when square is clicked.
   //once you click something tile is pushed and alternates turns
-  $('.tile').on('click' ,  function () {
-    tile = 1+$(this).index();
+  $('.tile').on('click', function() {
+    tile = 1 + $(this).index();
     if (playerMoves.length <= aiMoves.length) {
-      playerMoves.push(tile);
-    if ($(this).has('img').length === 0) {
-      iconId = event.target.id;
-      $(`#${iconId}`).append(`<img src ="images/${player}.png">`)
+      playerMoves.push(tile); //player's turn
+
+      if ($(this).has('img').length === 0) {
+        iconId = event.target.id;
+        $(`#${iconId}`).append(`<img src ="images/${player}.png">`)
+        $('body').addClass('opponent');
+      } else {
+        return;
+      }
     } else {
-      return;
+      aiMoves.push(tile); // ai's turn
+      if ($(this).has('img').length === 0) {
+        iconId = event.target.id;
+        $(`#${iconId}`).append(`<img src ="images/${ai}.png">`)
+        $('body').removeClass('opponent');
+      } else {
+        return;
+      }
     }
-  } else {
-    aiMoves.push(tile);
-    if ($(this).has('img').length === 0) {
-      iconId = event.target.id;
-      $(`#${iconId}`).append(`<img src ="images/${ai}.png">`)
-    } else {
-      return;
-    }
-  }
+    playerWin();
   })
   //change icon images in drop down menu
 
   $('.circle').on('click', function() {
-    $('body').removeClass();
-    $('body').addClass('circ');
+    player = 'circle';
     $('.icon').hide(1000);
     $('.yellow').hide(1000);
     $('.pink').hide(1000);
     $('#choose').appendTo('.middle');
     $('#choose2').appendTo('.middle');
-    player = 'circle';
-    ai = "cross";
+    $('body').removeClass("opponent");
+    $('body').addClass('circ');
+    ai = "cross"
     updateIcon();
   })
 
   $('.cross').on('click', function() {
-    $('body').removeClass();
-    $('body').addClass('x');
+    player = 'cross';
     $('.icon').hide(1000);
     $('.yellow').hide(1000);
     $('.pink').hide(1000);
     $('#choose').appendTo('.middle');
     $('#choose2').appendTo('.middle');
-    player = 'cross';
+    $('body').removeClass("opponent");
+    $('body').addClass('x');
     ai = "circle"
     updateIcon();
-
   })
 
   $('.apple').on('click', function() {
-    $('body').removeClass();
-    $('body').addClass('app');
+    player = 'apple';
     $('.icon').hide(1000);
     $('.yellow').hide(1000);
     $('.pink').hide(1000);
     $('#choose').appendTo('.middle');
     $('#choose2').appendTo('.middle');
-    player = 'apple';
-    ai = "window";
+    $('body').removeClass("opponent");
+    $('body').addClass('app');
+    ai = "window"
     updateIcon();
   })
 
   $('.windows').on('click', function() {
-    $('body').removeClass();
-    $('body').addClass('window');
+    player = 'window';
     $('.icon').hide(1000);
     $('.yellow').hide(1000);
     $('.pink').hide(1000);
     $('#choose').appendTo('.middle');
     $('#choose2').appendTo('.middle');
-    player = 'window';
-    ai = "apple";
+    $('body').removeClass("opponent");
+    $('body').addClass('window');
+    ai = "apple"
     updateIcon();
+
   })
 
   $('.knight').on('click', function() {
-    $('body').removeClass();
-    $('body').addClass('horse');
+    player = 'knight';
     $('.icon').hide(1000);
     $('.yellow').hide(1000);
     $('.pink').hide(1000);
     $('#choose').appendTo('.middle');
     $('#choose2').appendTo('.middle');
-    player = 'knight';
-    ai = "rook";
+    $('body').removeClass("opponent");
+    $('body').addClass('horse');
+    ai = "rook"
     updateIcon();
   })
 
   $('.rook').on('click', function() {
-    $('body').removeClass();
-    $('body').addClass('piece');
+    player = 'rook';
     $('.icon').hide(1000);
     $('.yellow').hide(1000);
     $('.pink').hide(1000);
     $('#choose').appendTo('.middle');
     $('#choose2').appendTo('.middle');
-    player = 'rook';
-    ai = "knight";
+    $('body').removeClass("opponent");
+    $('body').addClass('piece');
+    ai = "knight"
     updateIcon();
   })
 
   //click buttons and icons appear with slightly transparent background
-
 
   $('#choose').on('click', function() {
     if ($('.icons').hasClass('pink')) {
@@ -152,16 +168,4 @@ $(document).ready(function() {
 
   })
 
-  // $('#choose2').on('click', function() {
-  //   if ($('.icons').hasClass('yellow')) {
-  //     $('.icons').removeClass('yellow')
-  //   }
-  //   $('.icons').addClass('pink').slideToggle(1000);
-  //
-  //   $('.icon').slideToggle(1000);
-  // })
-  //
 })
-
-//make alternate ai and player
-// if player choose X ai = O etc.

@@ -132,22 +132,42 @@ img.icon {
   cursor: url(../images/cross.png),auto;
 }
 
-.app{
+.circ.opponent {
+  cursor: url(../images/cross.png),auto;
+}
+
+.x.opponent {
+  cursor: url(../images/circle.png),auto;
+}
+
+.app {
   cursor: url(../images/apple.png),auto;
 
 }
 
-.window{
+.window {
+  cursor: url(../images/window.png),auto;
+}
+
+.window.opponent {
+  cursor: url(../images/apple.png),auto;
+}
+.app.opponent{
   cursor: url(../images/window.png),auto;
 
 }
 
 .horse{
   cursor: url(../images/knight.png),auto;
-
+}
+.piece {
+  cursor: url(../images/rook.png),auto;
 }
 
-.piece {
+.piece.opponent {
+  cursor: url(../images/knight.png),auto;
+}
+.horse.opponent {
   cursor: url(../images/rook.png),auto;
 }
 
