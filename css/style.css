@@ -3,6 +3,8 @@
 body {
   background-size: cover;
   font-family: 'Pacifico', cursive;
+  background-size: cover;
+  background-repeat: no-repeat;
 
 }
 
@@ -258,14 +260,18 @@ img.icon {
 
 .boat{
   background-image: url(../images/boat.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .bridge {
   background-image: url(../images/bridge.jpg);
-
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .sunset {
   background-image: url(../images/sunset.jpg);
-
+  background-size: cover;
+  background-repeat: no-repeat;
 }
