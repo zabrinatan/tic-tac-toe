@@ -33,7 +33,7 @@ const playerWin = function () {
                  aiMoves.includes( winCombo[2]) ) {
         message = alert(`Congratulations! ${ai} win!`);
         return message;
-      } else if (playerMoves.length === 3 && aiMoves.length ===3 ) {
+      } else if (playerMoves.length === 4 && aiMoves.length ===4  ) {
         message = alert(`it's a draw!`)
         return message;
       }
