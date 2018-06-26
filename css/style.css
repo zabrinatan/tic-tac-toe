@@ -1,34 +1,32 @@
 @import url('https://fonts.googleapis.com/css?family=Acme');
-
 body {
   background-size: cover;
   font-family: 'Pacifico', cursive;
   background-size: cover;
   background-repeat: no-repeat;
-
+  color: white;
 }
-
 
 div.grid-container {
   display: grid;
-  grid-template-columns: 1fr 3fr 1fr ;
+  grid-template-columns: 1fr 3fr 1fr;
   grid-template-rows: 10% 90%;
 }
+
 div.tic-tac-toe {
-  grid-column:2;
+  grid-column: 2;
   grid-row: 2;
-  display:grid;
-  grid-template-columns:1fr 1fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  background-color: silver;
-  opacity: 0.7;
+  background-color: rgba(228, 204, 98, 0.3);
 }
+
 div.one {
   grid-column: 1;
   grid-row: 1;
   height: 170px;
   box-shadow: 10px 10px 50px black;
-
 }
 
 div.two {
@@ -36,60 +34,58 @@ div.two {
   grid-row: 1;
   height: 170px;
   box-shadow: 10px 10px 50px black;
-
 }
 
 div.four {
   grid-column: 1;
   grid-row: 2;
-  height:170px;
+  height: 170px;
   box-shadow: 10px 10px 50px black;
-
 }
+
 div.five {
   grid-column: 2;
-  height:170px;
+  height: 170px;
   box-shadow: 10px 10px 50px black;
-
 }
+
 div.three {
   grid-column: 3;
   grid-row: 1;
-  height:170px;
+  height: 170px;
   box-shadow: 10px 10px 50px black;
-
 }
+
 div.six {
   grid-column: 3;
   grid-row: 2;
-  height:170px;
+  height: 170px;
   box-shadow: 10px 10px 50px black;
-
 }
+
 div.seven {
   grid-column: 1;
-  grid-row: 3;=
-  height:170px;
+  grid-row: 3;
+  =height: 170px;
   box-shadow: 10px 10px 50px black;
-
 }
+
 div.eight {
   grid-column: 2;
   grid-row: 3;
-  height:170px;
+  height: 170px;
   box-shadow: 10px 10px 50px black;
-
 }
+
 div.nine {
   grid-column: 3;
   grid-row: 3;
-  height:170px;
+  height: 170px;
   box-shadow: 10px 10px 50px black;
-
 }
 
 div.icons {
-  grid-column:3;
+  grid-column: 3;
   grid-row: 2;
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
@@ -97,70 +93,68 @@ div.icons {
   padding-top: 20px;
   padding-bottom: 20px;
 }
+
 img.icon {
-  height: 50px;
+  height: 40px;
   display: block;
   margin: 0 auto;
   padding: 5px;
 }
 
-
 .circ {
-  cursor: url(../images/circle.png),auto;
+  cursor: url(../images/circle.png), auto;
 }
 
 .x {
-  cursor: url(../images/cross.png),auto;
+  cursor: url(../images/cross.png), auto;
 }
 
 .circ.opponent {
-  cursor: url(../images/cross.png),auto;
+  cursor: url(../images/cross.png), auto;
 }
 
 .x.opponent {
-  cursor: url(../images/circle.png),auto;
+  cursor: url(../images/circle.png), auto;
 }
 
 .app {
-  cursor: url(../images/apple.png),auto;
-
+  cursor: url(../images/apple.png), auto;
 }
 
 .window {
-  cursor: url(../images/window.png),auto;
+  cursor: url(../images/window.png), auto;
 }
 
 .window.opponent {
-  cursor: url(../images/apple.png),auto;
-}
-.app.opponent{
-  cursor: url(../images/window.png),auto;
-
+  cursor: url(../images/apple.png), auto;
 }
 
-.horse{
-  cursor: url(../images/knight.png),auto;
+.app.opponent {
+  cursor: url(../images/window.png), auto;
 }
+
+.horse {
+  cursor: url(../images/knight.png), auto;
+}
+
 .piece {
-  cursor: url(../images/rook.png),auto;
+  cursor: url(../images/rook.png), auto;
 }
 
 .piece.opponent {
-  cursor: url(../images/knight.png),auto;
+  cursor: url(../images/knight.png), auto;
 }
+
 .horse.opponent {
-  cursor: url(../images/rook.png),auto;
+  cursor: url(../images/rook.png), auto;
 }
-
-
 
 .tic-tac-toe img {
   margin: 50px 75px 50px 75px;
-  display:block;
+  display: block;
   height: 75px;
   width: 50%;
 }
-
 
 /* button css */
 
@@ -176,9 +170,10 @@ img.icon {
   height: 100px;
   box-shadow: 0 0 15px #CF9D16;
   grid-column: 1;
-  width: 48%;
+  width: 49%;
   font-family: 'Acme', sans-serif;
 }
+
 #choose2 {
   font-size: 24px;
   background-color: #CF8B74;
@@ -192,18 +187,16 @@ img.icon {
 .yellow {
   background-color: #CF9D16;
   opacity: 0.8;
-
 }
-.pink {
+
+/* .pink {
   background-color: #CF8B74;
   opacity: 0.8;
-
-}
+} */
 
 #choose img {
   display: inline-block;
   height: 50px
-
 }
 
 .middle {
@@ -219,7 +212,6 @@ img.icon {
   float: right;
   padding-right: 25px;
   padding-top: 25px;
-
 }
 
 .themes {
@@ -228,38 +220,32 @@ img.icon {
 }
 
 .theme {
-
   display: block;
 }
 
 .theme1 {
   height: 100px;
   width: 50%;
-  background-color: black;
-  opacity: 0.5;
+  background-color: rgba(201, 151, 22, 0.5);
   color: white;
 }
 
 .theme2 {
   height: 100px;
   width: 50%;
-  background-color: black;
-  opacity: 0.5;
+  background-color: rgba(45, 142, 179, 0.5);
   color: white;
-
 }
 
 .theme3 {
   height: 100px;
   width: 50%;
-  background-color: black;
-  opacity: 0.5;
+  background-color: rgba(192, 111, 226, 0.5);
   color: white;
 }
 
-
-.boat{
-  background-image: url(../images/boat.jpg);
+.boat {
+  background-image: url(../images/beeach.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -271,7 +257,7 @@ img.icon {
 }
 
 .sunset {
-  background-image: url(../images/sunset.jpg);
+  background-image: url(../images/trees.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }

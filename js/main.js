@@ -4,7 +4,6 @@ let ai;
 let tile;
 let iconId;
 let message;
-const icons = "circ x app window horse piece";
 const playerMoves = [];
 const aiMoves = [];
 const winningMoves = [
@@ -40,6 +39,8 @@ const playerWin = function () {
   }
 
 }
+
+//adds image of chosen icon to buttons and moves the buttons to the middle
 const updateIcon = function() {
   if ($('#choose img').length === 0) {
     $('#choose').html('You:            ');
@@ -94,7 +95,6 @@ $(document).ready(function() {
     player = 'circle';
     $('.icon').hide(1000);
     $('.yellow').hide(1000);
-    $('.pink').hide(1000);
     $('.tic-tac-toe').show(1000);
     $('#choose').appendTo('.middle');
     $('#choose2').appendTo('.middle');
@@ -109,7 +109,6 @@ $(document).ready(function() {
     player = 'cross';
     $('.icon').hide(1000);
     $('.yellow').hide(1000);
-    $('.pink').hide(1000);
     $('.tic-tac-toe').show(1000);
     $('#choose').appendTo('.middle');
     $('#choose2').appendTo('.middle');
@@ -124,7 +123,6 @@ $(document).ready(function() {
     player = 'apple';
     $('.icon').hide(1000);
     $('.yellow').hide(1000);
-    $('.pink').hide(1000);
     $('.tic-tac-toe').show(1000);
     $('#choose').appendTo('.middle');
     $('#choose2').appendTo('.middle');
@@ -139,7 +137,6 @@ $(document).ready(function() {
     player = 'window';
     $('.icon').hide(1000);
     $('.yellow').hide(1000);
-    $('.pink').hide(1000);
     $('.tic-tac-toe').show(1000);
     $('#choose').appendTo('.middle');
     $('#choose2').appendTo('.middle');
@@ -155,7 +152,6 @@ $(document).ready(function() {
     player = 'knight';
     $('.icon').hide(1000);
     $('.yellow').hide(1000);
-    $('.pink').hide(1000);
     $('.tic-tac-toe').show(1000);
     $('#choose').appendTo('.middle');
     $('#choose2').appendTo('.middle');
@@ -170,7 +166,6 @@ $(document).ready(function() {
     player = 'rook';
     $('.icon').hide(1000);
     $('.yellow').hide(1000);
-    $('.pink').hide(1000);
     $('.tic-tac-toe').show(1000);
     $('#choose').appendTo('.middle');
     $('#choose2').appendTo('.middle');
@@ -184,9 +179,6 @@ $(document).ready(function() {
   //click buttons and icons appear with slightly transparent background
 
   $('#choose').on('click', function() {
-    if ($('.icons').hasClass('pink')) {
-      $('.icons').removeClass('pink')
-    }
     $('.icons').addClass('yellow').slideToggle(1000);
     $('.icon').slideToggle(1000);
 
