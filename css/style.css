@@ -1,6 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Acme');
+
 body {
   background-size: cover;
+  font-family: 'Pacifico', cursive;
+
 }
+
 
 div.grid-container {
   display: grid;
@@ -13,17 +18,12 @@ div.tic-tac-toe {
   display:grid;
   grid-template-columns:1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  background-color: grey;
-  opacity: 0.4;
-
-  /* border: 5px solid #4F331A; */
-
+  background-color: silver;
+  opacity: 0.7;
 }
 div.one {
   grid-column: 1;
   grid-row: 1;
-  /* border-right: 5px solid #4F331A;
-  border-bottom: 10px solid #4F331A; */
   height: 170px;
   box-shadow: 10px 10px 50px black;
 
@@ -32,9 +32,6 @@ div.one {
 div.two {
   grid-column: 2;
   grid-row: 1;
-  /* border-left: 5px solid #4F331A;
-  border-right: 5px solid #4F331A;
-  border-bottom: 10px solid #4F331A; */
   height: 170px;
   box-shadow: 10px 10px 50px black;
 
@@ -43,20 +40,12 @@ div.two {
 div.four {
   grid-column: 1;
   grid-row: 2;
-  /* border-right: 5px solid #4F331A;
-  border-top: 5px solid #4F331A;
-  border-bottom: 5px solid #4F331A; */
   height:170px;
   box-shadow: 10px 10px 50px black;
 
 }
 div.five {
   grid-column: 2;
-  /* grid-row: 2;
-  border-left: 5px solid #4F331A;
-  border-right: 5px solid #4F331A;
-  border-top: 5px solid #4F331A;
-  border-bottom: 5px solid #4F331A; */
   height:170px;
   box-shadow: 10px 10px 50px black;
 
@@ -64,8 +53,6 @@ div.five {
 div.three {
   grid-column: 3;
   grid-row: 1;
-  /* border-left: 5px solid #4F331A;
-  border-bottom: 10px solid #4F331A; */
   height:170px;
   box-shadow: 10px 10px 50px black;
 
@@ -73,18 +60,13 @@ div.three {
 div.six {
   grid-column: 3;
   grid-row: 2;
-  /* border-top: 5px solid #4F331A;
-  border-left: 5px solid #4F331A;
-  border-bottom: 5px solid #4F331A; */
   height:170px;
   box-shadow: 10px 10px 50px black;
 
 }
 div.seven {
   grid-column: 1;
-  grid-row: 3;
-  /* border-top: 9px solid #4F331A;
-  border-right: 5px solid #4F331A; */
+  grid-row: 3;=
   height:170px;
   box-shadow: 10px 10px 50px black;
 
@@ -92,9 +74,6 @@ div.seven {
 div.eight {
   grid-column: 2;
   grid-row: 3;
-  /* border-top: 9px solid #4F331A;
-  border-left: 5px solid #4F331A;
-  border-right: 5px solid #4F331A; */
   height:170px;
   box-shadow: 10px 10px 50px black;
 
@@ -102,8 +81,6 @@ div.eight {
 div.nine {
   grid-column: 3;
   grid-row: 3;
-  /* border-top: 9px solid #4F331A;
-  border-left: 5px solid #4F331A; */
   height:170px;
   box-shadow: 10px 10px 50px black;
 
@@ -198,6 +175,7 @@ img.icon {
   box-shadow: 0 0 15px #CF9D16;
   grid-column: 1;
   width: 48%;
+  font-family: 'Acme', sans-serif;
 }
 #choose2 {
   font-size: 24px;
@@ -206,6 +184,7 @@ img.icon {
   box-shadow: 0 0 15px #CF8B74;
   grid-column: 2;
   width: 49%;
+  font-family: 'Acme', sans-serif;
 }
 
 .yellow {
