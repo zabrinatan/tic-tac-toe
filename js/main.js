@@ -65,7 +65,7 @@ $(document).ready(function() {
 
   //put image inside squares when square is clicked.
   //once you click something tile is pushed and alternates turns
-  $('.tile').on('click', function() {
+  $('.tile').on('click', function(event) {
     tile = 1 + $(this).index();
     if (playerMoves.length <= aiMoves.length) {
       playerMoves.push(tile); //player's turn
