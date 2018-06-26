@@ -183,8 +183,6 @@ $(document).ready(function() {
   })
 
   //click buttons and icons appear with slightly transparent background
-  $.backstretch("images/japan.jpg");
-
   $('#choose').on('click', function() {
     $('.icons').addClass('yellow').slideToggle(1000);
     $('.icon').slideToggle(1000);
