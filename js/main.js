@@ -20,19 +20,22 @@ const winningMoves = [
 //do if statement if content of playermoves/ai moves are in winning condition
 
 const playerWin = function () {
+  //TODO: do game over scenario to end game
+  //TODO: edit draw condition to simplify it
   for (let i = 0 ; i<winningMoves.length ; i++){
       const winCombo = winningMoves[i];
       if (playerMoves.includes( winCombo[0] ) &&
           playerMoves.includes( winCombo[1]) &&
           playerMoves.includes( winCombo[2]) ) {
         message = alert(`Congratulations! ${player} win!`);
+        gameover = true
         return message;
       } else if (aiMoves.includes(winCombo[0]) &&
                  aiMoves.includes( winCombo[1]) &&
                  aiMoves.includes( winCombo[2]) ) {
         message = alert(`Congratulations! ${ai} win!`);
         return message;
-      } else if (playerMoves.length === 4 && aiMoves.length ===5 || playerMoves.length === 5 && aiMoves.length ===4 ) {
+      } else if (playerMoves.length + aiMoves.length ===9 || playerMoves.length === 5 && aiMoves.length ===4 ) {
         message = alert(`it's a draw!`)
         return message;
       }
@@ -41,6 +44,8 @@ const playerWin = function () {
 }
 
 //adds image of chosen icon to buttons and moves the buttons to the middle
+
+//TODO refactor code to make it DRYer
 const updateIcon = function() {
   if ($('#choose img').length === 0) {
     $('#choose').html('You:            ');
@@ -89,7 +94,8 @@ $(document).ready(function() {
     }
     playerWin();
   })
-  //change icon images in drop down menu
+
+  //TODO: refactor below code to make it DRYer
 
   $('.circle').on('click', function() {
     player = 'circle';
@@ -177,27 +183,34 @@ $(document).ready(function() {
   })
 
   //click buttons and icons appear with slightly transparent background
+  $.backstretch("images/japan.jpg");
 
   $('#choose').on('click', function() {
     $('.icons').addClass('yellow').slideToggle(1000);
     $('.icon').slideToggle(1000);
 
   })
-
-  $('.theme1').on('click', function () {
-    $('body').removeClass('boat')
-    $('body').removeClass('bridge')
-    $('body').addClass('boat');
+//TODO: refactor to make it DRYer
+  $('.theme1').on('click', function (e) {
+    // $('body').removeClass('boat')
+    // $('body').removeClass('bridge')
+    // $('body').addClass('boat');
+    e.preventDefault();
+   $.backstretch('images/beeach.jpg');
   })
-  $('.theme2').on('click', function () {
-    $('body').removeClass('boat')
-    $('body').removeClass('sunset')
-    $('body').addClass('bridge');
+  $('.theme2').on('click', function (e) {
+    // $('body').removeClass('boat')
+    // $('body').removeClass('sunset')
+    // $('body').addClass('bridge');
+    e.preventDefault();
+   $.backstretch('images/bridge.jpg');
   })
-  $('.theme3').on('click', function () {
-    $('body').removeClass('boat')
-    $('body').removeClass('bridge')
-    $('body').addClass('sunset');
+  $('.theme3').on('click', function (e) {
+    // $('body').removeClass('boat')
+    // $('body').removeClass('bridge')
+    // $('body').addClass('sunset');
+    e.preventDefault();
+   $.backstretch('images/trees.jpg');
   })
 
 })
