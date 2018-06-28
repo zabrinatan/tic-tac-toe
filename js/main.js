@@ -3,9 +3,9 @@ let player;
 let ai;
 let tile;
 let iconId;
+let gameOver;
+let result;
 let message;
-const playerMoves = [];
-const aiMoves = [];
 const winningMoves = [
   [1, 2, 3],
   [1, 4, 7],
@@ -16,6 +16,15 @@ const winningMoves = [
   [4, 5, 6],
   [7, 8, 9]
 ];
+let playerMoves = [];
+let aiMoves = [];
+
+const gameReset = function () {
+   playerMoves = [];
+   aiMoves = [];
+
+}
+
 
 //do if statement if content of playermoves/ai moves are in winning condition
 
@@ -27,20 +36,21 @@ const playerWin = function () {
       if (playerMoves.includes( winCombo[0] ) &&
           playerMoves.includes( winCombo[1]) &&
           playerMoves.includes( winCombo[2]) ) {
-        message = alert(`Congratulations! ${player} win!`);
-        gameover = true
-        return message;
+      message = alert(`Congratulations! ${player} win!`);
+      gameOver= true;
       } else if (aiMoves.includes(winCombo[0]) &&
                  aiMoves.includes( winCombo[1]) &&
                  aiMoves.includes( winCombo[2]) ) {
         message = alert(`Congratulations! ${ai} win!`);
-        return message;
-      } else if (playerMoves.length + aiMoves.length ===9 || playerMoves.length === 5 && aiMoves.length ===4 ) {
-        message = alert(`it's a draw!`)
-        return message;
+        gameOver=true;
+
+      } else if (playerMoves.length + aiMoves.length ===9 ) {
+      gameOver=true;
+      message = alert(`it's a draw!`);
+
       }
   }
-
+  return message;
 }
 
 //adds image of chosen icon to buttons and moves the buttons to the middle
@@ -61,8 +71,32 @@ const updateIcon = function() {
 
   }
 }
+const imageOnTile = function () {
+if (playerMoves.length <= aiMoves.length) {
+  playerMoves.push(tile); //player's turn
+
+  if ($(this).has('img').length === 0) {
+    iconId = event.target.id;
+    $(`#${iconId}`).append(`<img src ="images/${player}.png">`)
+    $('body').addClass('opponent');
+  } else {
+    return;
+  }
+} else {
+  aiMoves.push(tile); // ai's turn
+  if ($(this).has('img').length === 0) {
+    iconId = event.target.id;
+    $(`#${iconId}`).append(`<img src ="images/${ai}.png">`)
+    $('body').removeClass('opponent');
+  } else {
+    return;
+  }
+}
+}
 
 $(document).ready(function() {
+  $.backstretch('images/nice.jpg');
+
   //default hide icons
   $('.icon').hide();
   $('.icons').hide();
@@ -72,27 +106,9 @@ $(document).ready(function() {
   //once you click something tile is pushed and alternates turns
   $('.tile').on('click', function(event) {
     tile = 1 + $(this).index();
-    if (playerMoves.length <= aiMoves.length) {
-      playerMoves.push(tile); //player's turn
-
-      if ($(this).has('img').length === 0) {
-        iconId = event.target.id;
-        $(`#${iconId}`).append(`<img src ="images/${player}.png">`)
-        $('body').addClass('opponent');
-      } else {
-        return;
-      }
-    } else {
-      aiMoves.push(tile); // ai's turn
-      if ($(this).has('img').length === 0) {
-        iconId = event.target.id;
-        $(`#${iconId}`).append(`<img src ="images/${ai}.png">`)
-        $('body').removeClass('opponent');
-      } else {
-        return;
-      }
-    }
+    imageOnTile();
     playerWin();
+
   })
 
   //TODO: refactor below code to make it DRYer
@@ -210,5 +226,13 @@ $(document).ready(function() {
     e.preventDefault();
    $.backstretch('images/trees.jpg');
   })
+
+  $('.reset').on('click', function () {
+    console.log('reset');
+      gameReset();
+      $('.tile').empty();
+  })
+
+
 
 })
