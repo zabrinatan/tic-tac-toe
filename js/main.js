@@ -19,9 +19,19 @@ const winningMoves = [
 let playerMoves = [];
 let aiMoves = [];
 
+//resets the game;
 const gameReset = function() {
   playerMoves = [];
   aiMoves = [];
+  $('.tile').empty();
+  $('.reset').hide();
+    $('#choose').html('Choose your icon');
+    $('#choose2').html("Opponent's icon ");
+  $('#choose').appendTo('.buttons');
+  $('#choose2').appendTo('.buttons');
+  $('#arrow').show(500);
+  $('body').removeClass();
+  $('body').addsClass('default-cursor');
 }
 
 
@@ -97,7 +107,7 @@ const imageOnTile = function() {
 }
 
 $(document).ready(function() {
-  $.backstretch('images/nice.jpg');
+  $.backstretch('images/beeach.jpg');
 
   //default hide icons
   $('.icon').hide();
@@ -107,6 +117,7 @@ $(document).ready(function() {
 
   //put image inside squares when square is clicked.
   //once you click something tile is pushed and alternates turns
+  //checks if anyone has won.
   $('.tile').on('click', function(event) {
     tile = 1 + $(this).index();
     imageOnTile();
@@ -123,7 +134,7 @@ $(document).ready(function() {
     $('.tic-tac-toe').show(1000);
     $('#choose').appendTo('.middle');
     $('#choose2').appendTo('.middle');
-    $('#arrow').remove();
+    $('#arrow').hide();
     $('body').removeClass("opponent");
     $('body').addClass('circ');
     ai = "cross"
@@ -137,7 +148,7 @@ $(document).ready(function() {
     $('.tic-tac-toe').show(1000);
     $('#choose').appendTo('.middle');
     $('#choose2').appendTo('.middle');
-    $('#arrow').remove();
+    $('#arrow').hide();
     $('body').removeClass("opponent");
     $('body').addClass('x');
     ai = "circle"
@@ -151,7 +162,7 @@ $(document).ready(function() {
     $('.tic-tac-toe').show(1000);
     $('#choose').appendTo('.middle');
     $('#choose2').appendTo('.middle');
-    $('#arrow').remove();
+    $('#arrow').hide();
     $('body').removeClass("opponent");
     $('body').addClass('app');
     ai = "window"
@@ -165,7 +176,7 @@ $(document).ready(function() {
     $('.tic-tac-toe').show(1000);
     $('#choose').appendTo('.middle');
     $('#choose2').appendTo('.middle');
-    $('#arrow').remove();
+    $('#arrow').hide();
     $('body').removeClass("opponent");
     $('body').addClass('window');
     ai = "apple"
@@ -180,7 +191,7 @@ $(document).ready(function() {
     $('.tic-tac-toe').show(1000);
     $('#choose').appendTo('.middle');
     $('#choose2').appendTo('.middle');
-    $('#arrow').remove();
+    $('#arrow').hide();
     $('body').removeClass("opponent");
     $('body').addClass('horse');
     ai = "rook"
@@ -194,7 +205,7 @@ $(document).ready(function() {
     $('.tic-tac-toe').show(1000);
     $('#choose').appendTo('.middle');
     $('#choose2').appendTo('.middle');
-    $('#arrow').remove();
+    $('#arrow').hide();
     $('body').removeClass("opponent");
     $('body').addClass('piece');
     ai = "knight"
@@ -209,33 +220,22 @@ $(document).ready(function() {
   })
   //TODO: refactor to make it DRYer
   $('.theme1').on('click', function(e) {
-    // $('body').removeClass('boat')
-    // $('body').removeClass('bridge')
-    // $('body').addClass('boat');
     e.preventDefault();
-    $.backstretch('images/beeach.jpg');
+    $.backstretch('images/nice.jpg');
   })
   $('.theme2').on('click', function(e) {
-    // $('body').removeClass('boat')
-    // $('body').removeClass('sunset')
-    // $('body').addClass('bridge');
     e.preventDefault();
     $.backstretch('images/bridge.jpg');
   })
   $('.theme3').on('click', function(e) {
-    // $('body').removeClass('boat')
-    // $('body').removeClass('bridge')
-    // $('body').addClass('sunset');
     e.preventDefault();
     $.backstretch('images/trees.jpg');
   })
 
   $('.reset').on('click', function() {
-    console.log('reset');
     gameReset();
-    $('.tile').empty();
-    $('.tic-tac-toe').show(1000);
-    $('.reset').hide();
+
+
   })
 
 

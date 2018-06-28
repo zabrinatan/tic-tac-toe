@@ -149,6 +149,10 @@ img.icon {
   cursor: url(../images/rook.png), auto;
 }
 
+.default-cursor {
+  cursor:default;
+}
+
 .tic-tac-toe img {
   margin: 50px 75px 50px 75px;
   display: block;
@@ -239,23 +243,6 @@ img.icon {
   color: white;
 }
 
-.boat {
-  background-image: url(../images/beeach.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.bridge {
-  background-image: url(../images/bridge.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.sunset {
-  background-image: url(../images/trees.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
 
 .reset {
   margin-top: 10px;
