@@ -6,6 +6,10 @@ let iconId;
 let gameOver;
 let result;
 let message;
+let playerMoves = [];
+let aiMoves = [];
+
+// winning possibilities
 const winningMoves = [
   [1, 2, 3],
   [1, 4, 7],
@@ -16,8 +20,6 @@ const winningMoves = [
   [4, 5, 6],
   [7, 8, 9]
 ];
-let playerMoves = [];
-let aiMoves = [];
 
 //resets the game;
 const gameReset = function() {
@@ -84,6 +86,10 @@ const updateIcon = function() {
 
   }
 }
+
+//player1 will always make the first move
+//checks if playermoves is less than ai moves.
+// pushes the tile number to player/ai array depending on who'sturn it is
 const imageOnTile = function() {
   if (playerMoves.length <= aiMoves.length) {
     playerMoves.push(tile); //player's turn
@@ -127,6 +133,7 @@ $(document).ready(function() {
   })
 
   //TODO: refactor below code to make it DRYer
+  //when you click a specific icon
 
   $('.circle').on('click', function() {
     player = 'circle';
@@ -220,6 +227,7 @@ $(document).ready(function() {
 
   })
   //TODO: refactor to make it DRYer
+  //when you click the theme buttons
   $('.theme1').on('click', function(e) {
     e.preventDefault();
     $.backstretch('images/nice.jpg');
@@ -232,6 +240,8 @@ $(document).ready(function() {
     e.preventDefault();
     $.backstretch('images/beeach.jpg');
   })
+
+  //reset button
   $('.reset').on('click', function() {
     gameReset();
   })
