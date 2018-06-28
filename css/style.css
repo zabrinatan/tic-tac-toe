@@ -189,11 +189,6 @@ img.icon {
   opacity: 0.8;
 }
 
-/* .pink {
-  background-color: #CF8B74;
-  opacity: 0.8;
-} */
-
 #choose img {
   display: inline-block;
   height: 50px
@@ -260,4 +255,16 @@ img.icon {
   background-image: url(../images/trees.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.reset {
+  margin-top: 10px;
+  height:100px;
+  font-family: 'Acme', sans-serif;
+  width: 200px;
+  font-size: 25px;
+  border-radius: 1em;
+  background-color: rgba(161, 212, 126, 0.7);
+  display: block;
+  margin: 250px 350px 0 350px;
 }

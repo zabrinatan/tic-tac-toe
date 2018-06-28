@@ -19,36 +19,38 @@ const winningMoves = [
 let playerMoves = [];
 let aiMoves = [];
 
-const gameReset = function () {
-   playerMoves = [];
-   aiMoves = [];
-
+const gameReset = function() {
+  playerMoves = [];
+  aiMoves = [];
 }
 
 
 //do if statement if content of playermoves/ai moves are in winning condition
 
-const playerWin = function () {
+const playerWin = function() {
   //TODO: do game over scenario to end game
   //TODO: edit draw condition to simplify it
-  for (let i = 0 ; i<winningMoves.length ; i++){
-      const winCombo = winningMoves[i];
-      if (playerMoves.includes( winCombo[0] ) &&
-          playerMoves.includes( winCombo[1]) &&
-          playerMoves.includes( winCombo[2]) ) {
+  for (let i = 0; i < winningMoves.length; i++) {
+    const winCombo = winningMoves[i];
+    if (playerMoves.includes(winCombo[0]) &&
+      playerMoves.includes(winCombo[1]) &&
+      playerMoves.includes(winCombo[2])) {
       message = alert(`Congratulations! ${player} win!`);
-      gameOver= true;
-      } else if (aiMoves.includes(winCombo[0]) &&
-                 aiMoves.includes( winCombo[1]) &&
-                 aiMoves.includes( winCombo[2]) ) {
-        message = alert(`Congratulations! ${ai} win!`);
-        gameOver=true;
+      $('.tic-tac-toe').hide();
+      $('.reset').show(1000);
 
-      } else if (playerMoves.length + aiMoves.length ===9 ) {
-      gameOver=true;
+    } else if (aiMoves.includes(winCombo[0]) &&
+      aiMoves.includes(winCombo[1]) &&
+      aiMoves.includes(winCombo[2])) {
+      message = alert(`Congratulations! ${ai} win!`);
+      $('.tic-tac-toe').hide();
+      $('.reset').show(1000);
+
+    } else if (playerMoves.length + aiMoves.length === 9) {
       message = alert(`it's a draw!`);
-
-      }
+      $('.tic-tac-toe').hide();
+      $('.reset').show(1000);
+    }
   }
   return message;
 }
@@ -71,27 +73,27 @@ const updateIcon = function() {
 
   }
 }
-const imageOnTile = function () {
-if (playerMoves.length <= aiMoves.length) {
-  playerMoves.push(tile); //player's turn
+const imageOnTile = function() {
+  if (playerMoves.length <= aiMoves.length) {
+    playerMoves.push(tile); //player's turn
 
-  if ($(this).has('img').length === 0) {
-    iconId = event.target.id;
-    $(`#${iconId}`).append(`<img src ="images/${player}.png">`)
-    $('body').addClass('opponent');
+    if ($(this).has('img').length === 0) {
+      iconId = event.target.id;
+      $(`#${iconId}`).append(`<img src ="images/${player}.png">`)
+      $('body').addClass('opponent');
+    } else {
+      return;
+    }
   } else {
-    return;
+    aiMoves.push(tile); // ai's turn
+    if ($(this).has('img').length === 0) {
+      iconId = event.target.id;
+      $(`#${iconId}`).append(`<img src ="images/${ai}.png">`)
+      $('body').removeClass('opponent');
+    } else {
+      return;
+    }
   }
-} else {
-  aiMoves.push(tile); // ai's turn
-  if ($(this).has('img').length === 0) {
-    iconId = event.target.id;
-    $(`#${iconId}`).append(`<img src ="images/${ai}.png">`)
-    $('body').removeClass('opponent');
-  } else {
-    return;
-  }
-}
 }
 
 $(document).ready(function() {
@@ -101,6 +103,7 @@ $(document).ready(function() {
   $('.icon').hide();
   $('.icons').hide();
   $('.tic-tac-toe').hide();
+  $('.reset').hide();
 
   //put image inside squares when square is clicked.
   //once you click something tile is pushed and alternates turns
@@ -204,35 +207,36 @@ $(document).ready(function() {
     $('.icon').slideToggle(1000);
 
   })
-//TODO: refactor to make it DRYer
-  $('.theme1').on('click', function (e) {
+  //TODO: refactor to make it DRYer
+  $('.theme1').on('click', function(e) {
     // $('body').removeClass('boat')
     // $('body').removeClass('bridge')
     // $('body').addClass('boat');
     e.preventDefault();
-   $.backstretch('images/beeach.jpg');
+    $.backstretch('images/beeach.jpg');
   })
-  $('.theme2').on('click', function (e) {
+  $('.theme2').on('click', function(e) {
     // $('body').removeClass('boat')
     // $('body').removeClass('sunset')
     // $('body').addClass('bridge');
     e.preventDefault();
-   $.backstretch('images/bridge.jpg');
+    $.backstretch('images/bridge.jpg');
   })
-  $('.theme3').on('click', function (e) {
+  $('.theme3').on('click', function(e) {
     // $('body').removeClass('boat')
     // $('body').removeClass('bridge')
     // $('body').addClass('sunset');
     e.preventDefault();
-   $.backstretch('images/trees.jpg');
+    $.backstretch('images/trees.jpg');
   })
 
-  $('.reset').on('click', function () {
+  $('.reset').on('click', function() {
     console.log('reset');
-      gameReset();
-      $('.tile').empty();
+    gameReset();
+    $('.tile').empty();
+    $('.tic-tac-toe').show(1000);
+    $('.reset').hide();
   })
-
 
 
 })
