@@ -58,6 +58,7 @@ const playerWin = function() {
     } else if (playerMoves.length + aiMoves.length === 9) {
       message = alert(`it's a draw!`);
       $('.tic-tac-toe').hide();
+
       $('.reset').show(1000);
       break;
     }
@@ -229,12 +230,11 @@ $(document).ready(function() {
   })
   $('.theme3').on('click', function(e) {
     e.preventDefault();
-    $.backstretch('images/trees.jpg');
+    $.backstretch('images/beeach.jpg');
   })
 
   $('.reset').on('click', function() {
     gameReset();
-
 
   })
 
