@@ -252,12 +252,3 @@ img.icon {
   display: block;
   margin: 250px 350px 0 350px;
 }
-@media only screen and (max-width: 500px){
-  .tic-tac-toe {
-  display: grid;
-  grid-template-columns: 2em 2em 2em;
-  grid-template-rows: 2em 2em 2em
-  }
-
-
-}
