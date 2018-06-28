@@ -232,10 +232,8 @@ $(document).ready(function() {
     e.preventDefault();
     $.backstretch('images/beeach.jpg');
   })
-
   $('.reset').on('click', function() {
     gameReset();
-
   })
 
 
