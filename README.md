@@ -19,7 +19,7 @@ Technologies used:
 - CSS
 - Javascript
 - jQuery library
-- Backstretch (jQuery plugin): stretches the background to the size of the screen.
+- [Backstretch](http://www.jquery-backstretch.com/) (jQuery plugin): stretches the background to the size of the screen.
 
 Future improvements:
 - Implement responsiveness on smaller screens
