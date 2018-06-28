@@ -251,7 +251,7 @@ img.icon {
   width: 200px;
   font-size: 25px;
   border-radius: 1em;
-  background-color: rgba(161, 212, 126, 0.7);
+  background-color: rgb(161, 212, 126);
   display: block;
   margin: 250px 350px 0 350px;
 }

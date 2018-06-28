@@ -38,7 +38,6 @@ const gameReset = function() {
 //do if statement if content of playermoves/ai moves are in winning condition
 
 const playerWin = function() {
-  //TODO: do game over scenario to end game
   //TODO: edit draw condition to simplify it
   for (let i = 0; i < winningMoves.length; i++) {
     const winCombo = winningMoves[i];
@@ -60,6 +59,7 @@ const playerWin = function() {
       message = alert(`it's a draw!`);
       $('.tic-tac-toe').hide();
       $('.reset').show(1000);
+      break;
     }
   }
   return message;
